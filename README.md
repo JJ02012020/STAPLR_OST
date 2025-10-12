@@ -21,8 +21,8 @@ Staplr is an AI-powered assistant designed to enhance productivity by providing 
 ### 1️⃣ Clone the Repository
 
 ```sh
- git clone https://github.com/K-a-y-D-e-e/Staplr.git
- cd Staplr
+ https://github.com/JJ02012020/STAPLR_OST.git
+ cd STAPLR_OST
 ```
 
 ### 2️⃣ Install Dependencies
@@ -78,5 +78,6 @@ This project is open-source and available under the [MIT License](LICENSE).
 ---
 
 Give Staplr a ⭐ if you like it!
+
 
 
