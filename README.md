@@ -63,9 +63,8 @@ python staplr_ui.py
 
 ## 👨‍💻 Contributors
 
-- **Karmadeept Sarkar** - [LinkedIn](https://www.linkedin.com/in/karmadeept-sarkar-31891627b/)
+
 - **Jay Shejwal** - [LinkedIn](https://www.linkedin.com/in/jay-s-80187b202/)
-- **Eesha Barad** - [LinkedIn](https://www.linkedin.com/in/eesha-barad-058bbb29b/)
 - **Sai Ansh Batho** - [LinkedIn](https://www.linkedin.com/in/sai-ansh-batho-aa3327256/)
 
 ## 🤝 Contributing
@@ -79,4 +78,5 @@ This project is open-source and available under the [MIT License](LICENSE).
 ---
 
 Give Staplr a ⭐ if you like it!
+
 
