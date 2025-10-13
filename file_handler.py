@@ -1,5 +1,6 @@
 import csv
 from docx import Document
+import os 
 
 def read_word_document(file_path):
     """Reads content from a Word (.docx) document."""
@@ -31,3 +32,4 @@ def process_file(file_path):
         return read_csv_file(file_path)
     
     return "⚠️ Unsupported file type. Please upload a .docx or .csv file."
+
