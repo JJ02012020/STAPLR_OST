@@ -4,30 +4,31 @@ import matplotlib.pyplot as plt
 import os
 
 def perform_eda(file_path):
-    """Performs basic Exploratory Data Analysis (EDA) on a CSV file."""
+    """Run basic Exploratory Data Analysis (EDA) on a given CSV file."""
     try:
-        if not file_path.endswith(".csv"):
-            return "Unsupported file type. Please upload a CSV file."
+        if not file_path.lower().endswith(".csv"):
+            return "Unsupported file format. Please provide a CSV file."
 
-        # Load the dataset
-        df = pd.read_csv(file_path)
+        # Load dataset into DataFrame
+        data = pd.read_csv(file_path)
 
-        # Basic info
-        summary = {
-            "Shape": df.shape,
-            "Columns": list(df.columns),
-            "Missing Values": df.isnull().sum().to_dict(),
-            "Basic Stats": df.describe().to_dict()
+        # Collecting basic dataset information
+        eda_summary = {
+            "Shape": data.shape,
+            "Columns": list(data.columns),
+            "Missing Values": data.isnull().sum().to_dict(),
+            "Basic Stats": data.describe().to_dict()
         }
 
-        # Save a correlation heatmap
+        # Generate and save correlation heatmap
         plt.figure(figsize=(10, 6))
-        sns.heatmap(df.corr(), annot=True, cmap="coolwarm", fmt=".2f")
-        heatmap_path = "eda_heatmap.png"
-        plt.savefig(heatmap_path)
+        sns.heatmap(data.corr(), annot=True, cmap="coolwarm", fmt=".2f")
+        heatmap_file = "eda_heatmap.png"
+        plt.savefig(heatmap_file)
         plt.close()
 
-        return summary, heatmap_path
+        return eda_summary, heatmap_file
 
-    except Exception as e:
-        return f"Error during EDA: {e}"
+    except Exception as error:
+        return f"Error during EDA: {error}"
+
