@@ -27,6 +27,7 @@ def add_event(date, time_str, duration, description, reminder):
     }
     events.append(new_event)
     save_events(events)
+    print("Event added successfully!")
 
 def check_reminders():
     """Checks if there are any reminders and speaks them when the time comes."""
@@ -42,3 +43,4 @@ def check_reminders():
                 speak_text(reminder_message)
 
         time.sleep(60)  # Check every minute
+
