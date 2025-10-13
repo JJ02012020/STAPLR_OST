@@ -112,7 +112,7 @@ def process_staplr_query(query):
         return "⚠️ I can only assist with predefined functions."
     
 # Main function to run Staplr in terminal mode
-def main():
+  def main():
     start_reminder_thread()
 
     while True:
@@ -125,3 +125,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
