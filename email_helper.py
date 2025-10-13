@@ -1,6 +1,15 @@
-def suggest_email_template(template_type):
-    """Suggests an email template based on the requested type."""
+def suggest_email_template(template_type: str) -> str:
+    """
+    Suggest a predefined email template based on the given type.
     
+    Args:
+        template_type (str): The type of email template to retrieve.
+                             Examples: 'formal', 'informal', 'leave request', etc.
+    
+    Returns:
+        str: The corresponding email template or a helpful message if not found.
+    """
+
     templates = {
         "formal": """Subject: [Your Subject Here]
 
@@ -10,7 +19,7 @@ I hope this email finds you well. I wanted to discuss [topic]. Please let me kno
 
 Best regards,  
 [Your Name]""",
-        
+
         "informal": """Subject: Hey [Recipient's Name]!
 
 Hey [Recipient's Name],
@@ -122,18 +131,34 @@ Best,
 [Your Name]"""
     }
 
-    return templates.get(template_type.lower(), "Template not found. Available types: formal, informal, job application, meeting request, follow-up, leave request, apology, client proposal, project update, resignation, thank you.")
+    key = template_type.strip().lower()
+    if key in templates:
+        return templates[key]
+    else:
+        available = ", ".join(sorted(templates.keys()))
+        return f"⚠️ Template not found for '{template_type}'. Available types: {available}."
 
-def autocomplete_sentence(partial_text):
-    """Autocompletes common business email phrases."""
+
+def autocomplete_sentence(partial_text: str) -> str:
+    """
+    Autocomplete common business email phrases.
     
+    Args:
+        partial_text (str): The beginning of the sentence to autocomplete.
+                            Examples: 'thank you for', 'I hope', etc.
+    
+    Returns:
+        str: A suggested full phrase or a helpful fallback message.
+    """
+
     suggestions = {
         "thank you for": "Thank you for your time and consideration. Looking forward to your response.",
         "looking forward to": "Looking forward to working with you and your team on this project.",
-        "I hope": "I hope this email finds you well and in good health.",
+        "i hope": "I hope this email finds you well and in good health.",
         "as per our discussion": "As per our discussion, I have attached the necessary documents for your review.",
         "please find attached": "Please find attached the requested documents for your review.",
         "let me know": "Let me know if you have any questions or need further information."
     }
 
-    return suggestions.get(partial_text.lower(), f"Could not find a suggestion for '{partial_text}'.")
+    key = partial_text.strip().lower()
+    return suggestions.get(key, f"⚠️ No suggestion found for '{partial_text}'. Try: {', '.join(suggestions.keys())}")
